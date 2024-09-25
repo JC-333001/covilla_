@@ -301,6 +301,9 @@
             </div>
           </div>
           <!-- Add Pagination -->
+          <div class="overlay overlay1"></div>
+          <div class="overlay overlay2"></div>
+
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-pagination"></div>
@@ -333,7 +336,7 @@
             <li class="feature">
               <div class="feature_detail">
                 <div class="feature_icon">
-                  <img src="/assets/Passport.svg" alt="" />
+                  <img src="/assets/icon/Passport.svg" alt="" />
                 </div>
                 <h2 class="feature_heading">Hands-on planning</h2>
                 <p class="feature_intro">
@@ -346,7 +349,7 @@
               <div class="circle_logo"></div>
               <div class="feature_detail">
                 <div class="feature_icon">
-                  <img src="/assets/Case.svg" alt="" />
+                  <img src="/assets/icon/Case.svg" alt="" />
                 </div>
                 <h2 class="feature_heading">Hands-on planning</h2>
                 <p class="feature_intro">
@@ -359,7 +362,7 @@
               <div class="circle_logo"></div>
               <div class="feature_detail">
                 <div class="feature_icon">
-                  <img src="/assets/Deals.svg" alt="" />
+                  <img src="/assets/icon/Deals.svg" alt="" />
                 </div>
                 <h2 class="feature_heading">Hands-on planning</h2>
                 <p class="feature_intro">
@@ -372,7 +375,7 @@
               <div class="circle_logo"></div>
               <div class="feature_detail">
                 <div class="feature_icon">
-                  <img src="/assets/Location.svg" alt="" />
+                  <img src="./assets/icon/Location.svg" alt="" />
                 </div>
                 <h2 class="feature_heading">Hands-on planning</h2>
                 <p class="feature_intro">
@@ -458,15 +461,20 @@
                 <div class="vacation_photo">
                   <div class="vacation_background_img one"></div>
                 </div>
-                <h2 class="vacation_city_name">Bahariya Oasis</h2>
-                <p class="vacation_city_intro">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Minus impedit officiis assumenda dolorem iste sunt, praesent
-                </p>
-                <div class="vacation_city_info">
+                <div class="vacation_city_content">
+                  <h2 class="vacation_city_name">Bahariya Oasis</h2>
+                  <p class="vacation_city_intro">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Minus impedit officiis assumenda dolorem iste sunt, praesent
+                  </p>
+                  <hr />
+
                   <div class="vacation_city_price">
-                    <span class="rates_from">RATES FROM</span
-                    ><span class="rate">$6400</span>
+                    <div class="vacation_city_price_info">
+                      <span class="rates_from">RATES FROM</span
+                      ><span class="rate">$6400</span>
+                    </div>
+                    <div class="detail_btn">DETAILS</div>
                   </div>
                 </div>
               </li>
@@ -474,15 +482,20 @@
                 <div class="vacation_photo">
                   <div class="vacation_background_img two"></div>
                 </div>
-                <h2 class="vacation_city_name">Bahariya Oasis</h2>
-                <p class="vacation_city_intro">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Minus impedit officiis assumenda dolorem iste sunt, praesent
-                </p>
-                <div class="vacation_city_info">
+                <div class="vacation_city_content">
+                  <h2 class="vacation_city_name">Cairo</h2>
+                  <p class="vacation_city_intro">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Minus impedit officiis assumenda dolorem iste sunt, praesent
+                  </p>
+                  <hr />
+
                   <div class="vacation_city_price">
-                    <span class="rates_from">RATES FROM</span
-                    ><span class="rate">$6400</span>
+                    <div class="vacation_city_price_info">
+                      <span class="rates_from">RATES FROM</span
+                      ><span class="rate">$6400</span>
+                    </div>
+                    <div class="detail_btn">DETAILS</div>
                   </div>
                 </div>
               </li>
@@ -490,15 +503,20 @@
                 <div class="vacation_photo">
                   <div class="vacation_background_img three"></div>
                 </div>
-                <h2 class="vacation_city_name">Bahariya Oasis</h2>
-                <p class="vacation_city_intro">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Minus impedit officiis assumenda dolorem iste sunt, praesent
-                </p>
-                <div class="vacation_city_info">
+                <div class="vacation_city_content">
+                  <h2 class="vacation_city_name">Luxor</h2>
+                  <p class="vacation_city_intro">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Minus impedit officiis assumenda dolorem iste sunt, praesent
+                  </p>
+                  <hr />
+
                   <div class="vacation_city_price">
-                    <span class="rates_from">RATES FROM</span
-                    ><span class="rate">$6400</span>
+                    <div class="vacation_city_price_info">
+                      <span class="rates_from">RATES FROM</span
+                      ><span class="rate">$6400</span>
+                    </div>
+                    <div class="detail_btn">DETAILS</div>
                   </div>
                 </div>
               </li>
@@ -800,18 +818,25 @@
         </div>
       </div>
     </section>
+
     <footer>
-      <div class="footer_left">
-        <div class="destinations_tab">DESTINATIONS</div>
-        <div class="destinations_tab">FRANCE</div>
-        <div class="destinations_tab">INDONESIA</div>
-        <div class="destinations_tab">GREECE</div>
-        <div class="destinations_tab">EGYPT</div>
+      <div class="hr_line"></div>
+      <div class="footer_container">
+        <div class="footer_left">
+          <div class="destinations_tab">DESTINATIONS</div>
+          <div class="destinations_tab">FRANCE</div>
+          <div class="destinations_tab">INDONESIA</div>
+          <div class="destinations_tab">GREECE</div>
+          <div class="destinations_tab">EGYPT</div>
+        </div>
+        <div class="footer_right">
+          <div class="covilla_logo"><span class="thin-span">Co</span>Villa</div>
+        </div>
       </div>
     </footer>
     <!-- Swiper JS -->
     <script src="./swiper/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 
     <!-- Initialize Swiper -->
     <script>

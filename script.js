@@ -1,25 +1,10 @@
 // import Swiper from "https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js";
-
 import { vacation_data } from "./data.js";
+import { review_data } from "./data.js";
+import { locationImageMap } from "./data.js";
+
 // Destination drop down menu
-const locationImageMap = new Map([
-  [
-    "France",
-    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dd011e021d45c28b27a10_021.jpeg",
-  ],
-  [
-    "Indonesia",
-    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd2961c3e396968aac28_031.jpeg",
-  ],
-  [
-    "Greece",
-    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcebe459b2b2910bdb3cd_015.jpeg",
-  ],
-  [
-    "Egypt",
-    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dd011e021d45c28b27a10_021.jpeg",
-  ],
-]);
+
 let des = document.getElementsByClassName("destinations")[0];
 let countries_list = document.getElementsByClassName("country");
 let desBut = des.firstChild;
@@ -51,7 +36,7 @@ for (const country of countries_list) {
     country.style.setProperty("transition", "background 0.5s");
     country.style.setProperty(
       "background",
-      `center/cover no-repeat url(${bg_img})`
+      `linear-gradient(rgba(15, 19, 38, 0.55), rgba(15, 19, 38, 0.55)),center/cover no-repeat  url(${bg_img})`
     );
 
     h4.style.setProperty("color", "white");
@@ -90,7 +75,6 @@ const backgroundList = [
 ];
 
 let header = document.querySelector("header");
-console.log(header);
 let right_arrow = document.querySelector("#right_arrow");
 let left_arrow = document.querySelector("#left_arrow");
 let city_name = document.querySelector("#city_name");
@@ -147,6 +131,18 @@ let imageMap = new Map([
   ],
   [
     "Europe",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcebe459b2b2910bdb3cd_015.jpeg",
+  ],
+  [
+    "France",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dd011e021d45c28b27a10_021.jpeg",
+  ],
+  [
+    "Indonesia",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd2961c3e396968aac28_031.jpeg",
+  ],
+  [
+    "Greece",
     "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcebe459b2b2910bdb3cd_015.jpeg",
   ],
 ]);
@@ -312,7 +308,7 @@ window.addEventListener("scroll", function () {
   let scrollTop = document.documentElement.scrollTop;
   const overlayUp = document.querySelector(".white_overlay_up");
   const overlayDown = document.querySelector(".white_overlay_down");
-  console.log(scrollTop);
+
   if (scrollTop >= 700) {
     overlayUp.style.setProperty("top", "-50%");
     overlayDown.style.setProperty("top", "100%");
@@ -468,20 +464,52 @@ btn_3.addEventListener("click", () => {
 });
 
 let vacation_city = document.getElementsByClassName("vacation_city");
-let vacation_city_datas = vacation_data[blue_bar_position - 1];
+let vacation_list = document.getElementsByClassName("vacation_list")[0];
 
-for (city of vacation_city) {
-  // let city_data = vacation_city_datas.cities[city.id];
-  city.addEventListener("mouseenter", (e) => {
-    console.log(e.target);
-    e.target.firstElementChild.firstElementChild.classList.add("large");
+//change vacation cities info when click on country btns
+[btn_0, btn_1, btn_2, btn_3].forEach((btn) => {
+  btn.addEventListener("click", () => {
+    vacation_list.style.setProperty("animation", "closeCities 0.5s");
+    setTimeout(() => {
+      vacation_list.style.setProperty("animation", "showCities 0.5s");
+    }, "300");
+    let vacation_country_name =
+      btn.previousElementSibling.firstElementChild.innerHTML;
+    let vacation_city_datas = vacation_data.find(
+      (item) => item.country === vacation_country_name
+    );
+    // console.log(vacation_city_datas);
+    for (let index = 0; index < vacation_city_datas.cities.length; index++) {
+      vacation_city[
+        index
+      ].firstElementChild.firstElementChild.style.setProperty(
+        "background-image",
+        `url(${vacation_city_datas.cities[index].img})`
+      );
+      vacation_city[
+        index
+      ].firstElementChild.nextElementSibling.firstElementChild.innerHTML =
+        vacation_city_datas.cities[index].name;
+    }
   });
-  city.addEventListener("mouseleave", (e) => {
-    e.target.firstElementChild.firstElementChild.classList.remove("large");
+});
+// scale vacation city photos when hover
+for (let city of vacation_city) {
+  city.addEventListener("mouseenter", () => {
+    city.firstElementChild.firstElementChild.style.setProperty(
+      "transform",
+      "scale(1.05)"
+    );
+  });
+  city.addEventListener("mouseleave", () => {
+    city.firstElementChild.firstElementChild.style.setProperty(
+      "transform",
+      "scale(1)"
+    );
   });
 }
 
-// how it works
+// how it works section
 let bg_overlay1 = document.querySelector(".bg_overlay_1");
 let bg_overlay2 = document.querySelector(".bg_overlay_2");
 
@@ -496,16 +524,14 @@ window.addEventListener("scroll", function () {
   }
 });
 
-//review photos
+//review photos swipe when hover
 let review_photos = document.querySelector(".review_photos");
 let photos = document.getElementsByClassName("photo");
 const half_window = window.innerWidth / 2;
 
-console.log(`halfwidow = ${half_window}`);
-
 review_photos.addEventListener("mouseover", (e) => {
   let move_dis_rate = (-1 * (e.x - half_window)) / half_window;
-  console.log(e.x);
+  // console.log(e.x);
   review_photos.style.setProperty(
     "transform",
     `translateX(${40 * move_dis_rate}vw)`
@@ -513,25 +539,26 @@ review_photos.addEventListener("mouseover", (e) => {
 });
 
 review_photos.addEventListener("mouseleave", (e) => {
-  let move_dis_rate = (-1 * (e.x - half_window)) / half_window;
-  console.log(e.x);
+  // let move_dis_rate = (-1 * (e.x - half_window)) / half_window;
+  // console.log(e.x);
   review_photos.style.setProperty("transform", "none");
 });
 
-for (photo of photos) {
-  photo.addEventListener("mouseenter", (e) => {
+for (let i = 0; i < photos.length; i++) {
+  photos[i].addEventListener("mouseenter", (e) => {
     e.target.firstElementChild.style.setProperty("visibility", "visible");
   });
-  photo.addEventListener("mouseleave", (e) => {
+  photos[i].addEventListener("mouseleave", (e) => {
     e.target.firstElementChild.style.setProperty("visibility", "hidden");
   });
+  photos[i].style.setProperty("background-image", `url(${review_data[i].img})`);
 }
 
 //agent photos
 let agent_intros = document.getElementsByClassName("agent_intro");
 let photo_containers = document.getElementsByClassName("photo_container");
 
-for (intro of agent_intros) {
+for (let intro of agent_intros) {
   intro.addEventListener("mouseenter", (e) => {
     e.target.firstElementChild.firstElementChild.classList.add("large");
   });
@@ -542,11 +569,21 @@ for (intro of agent_intros) {
 
 //post photos
 let post_list = document.getElementsByClassName("post");
+let main_post_bg = document.getElementsByClassName("main_post_bg")[0];
 
-for (post of post_list) {
+main_post_bg.addEventListener("mouseenter", (e) => {
+  e.target.style.setProperty("transform", "scale(1.1)");
+  // e.target.style.setProperty("filter", "blur(5px)");
+});
+
+main_post_bg.addEventListener("mouseleave", (e) => {
+  e.target.style.setProperty("transform", "none");
+  // e.target.style.setProperty("filter", "blur(0px)");
+});
+
+for (let post of post_list) {
   post.addEventListener("mouseenter", (e) => {
     let post_bg = e.target.firstElementChild.firstElementChild;
-    console.log(post, post_bg);
     post_bg.style.setProperty("transform", "scale(1.1)");
   });
   post.addEventListener("mouseleave", (e) => {

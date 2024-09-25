@@ -68,3 +68,42 @@ export const vacation_data = [
     ],
   },
 ];
+export const review_data = [
+  {
+    img: "https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607b6ccb8c09f127ee426222_Family004.jpeg",
+  },
+  {
+    img: "https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607b6af17c67770ae3de1541_Family001.jpeg",
+  },
+  {
+    img: "	https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607b6c801c6cc62928080d5c_Family003.jpeg",
+  },
+  {
+    img: "	https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607b6d1847737e3cad7ace73_Family005.jpeg",
+  },
+  {
+    img: "https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607dcd6f4c797d614a152a89_Family0012.jpeg",
+  },
+  {
+    img: "https://assets.website-files.com/60675f13ea324fdd4af9ef2a/607b6af17c67770ae3de1541_Family001.jpeg",
+  },
+];
+
+export const locationImageMap = new Map([
+  [
+    "France",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dd011e021d45c28b27a10_021.jpeg",
+  ],
+  [
+    "Indonesia",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd2961c3e396968aac28_031.jpeg",
+  ],
+  [
+    "Greece",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcebe459b2b2910bdb3cd_015.jpeg",
+  ],
+  [
+    "Egypt",
+    "https://assets.website-files.com/606764630d23c37bf9d41bb1/607dd011e021d45c28b27a10_021.jpeg",
+  ],
+]);

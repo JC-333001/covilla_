@@ -77,6 +77,7 @@ a:visited {
   margin-left: 25px;
   position: relative;
   z-index: 25;
+  cursor: pointer;
 }
 
 .thin-span {
@@ -636,6 +637,17 @@ body {
   color: white;
 }
 
+.vacation_des h3.sub_title {
+  color: white;
+}
+
+.vacation_des .card_title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
 section.gallery {
   text-align: center;
   position: relative;
@@ -643,10 +655,11 @@ section.gallery {
 }
 
 .gallery_heading {
-  font-size: 2rem;
-  font-weight: 300;
+  font-size: 3rem;
+  /* font-weight: 400; */
   margin-top: 20px;
   margin-bottom: 20px;
+  color: #081c3a;
 }
 
 .gallery_container {
@@ -1127,17 +1140,36 @@ li.vacation_country {
   transform: translateX(-0%);
 }
 
+@keyframes showCities {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes closeCities {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
 .vacation_city {
   background-color: white;
   width: 30%;
   height: 470px;
-  padding: 15px;
+  padding: 1.5rem;
   border: #e6e6f3 1px solid;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
   transition: all 1s;
+  text-align: left;
 }
 
 .vacation_city:hover {
@@ -1150,10 +1182,11 @@ li.vacation_country {
 }
 
 .vacation_photo {
-  width: 22vw;
-  height: 20vw;
+  width: 100%;
+  height: 50%;
   border-radius: 5px;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .vacation_background_img {
@@ -1162,7 +1195,19 @@ li.vacation_country {
   background-image: url(https://assets.website-files.com/606764630d23c37bf9d41bb1/607dd011e021d4d191b27a11_022.jpeg);
   background-position: center;
   background-size: cover;
-  transition: all;
+  transition: all 1s;
+}
+
+.vacation_background_img.one {
+  background-image: url(https://cdn.prod.website-files.com/606764630d23c37bf9d41bb1/607dd011e021d45c28b27a10_021.jpeg);
+}
+
+.vacation_background_img.two {
+  background-image: url(https://cdn.prod.website-files.com/606764630d23c37bf9d41bb1/607dd011e021d4d191b27a11_022.jpeg);
+}
+
+.vacation_background_img.three {
+  background-image: url(https://cdn.prod.website-files.com/606764630d23c37bf9d41bb1/607dd02d03615176c83d10e5_024.jpeg);
 }
 
 .vacation_background_img.large {
@@ -1170,6 +1215,69 @@ li.vacation_country {
   transform: scale3d(1.05, 1.05, 1);
 }
 
+.vacation_city_content {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.vacation_city_name {
+  margin-bottom: 10px;
+  text-align: left;
+  color: #081c3a;
+}
+
+.vacation_city_intro {
+  color: #081c3a;
+}
+
+.vacation_city hr {
+  width: 100%;
+  border: 1px solid rgba(230, 230, 243, 0.5);
+
+  margin: 20px 0;
+}
+
+.vacation_city_price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.vacation_city_price_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  color: #081c3a;
+}
+
+.vacation_city_price_info .rates_from {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.vacation_city_price_info .rate {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.detail_btn {
+  width: 100px;
+  height: 50px;
+  background-color: white;
+  color: #081c3a;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid rgba(230, 230, 243, 0.5);
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+}
 .promise_container {
   width: 100%;
   height: 80vh;
@@ -1183,6 +1291,10 @@ li.vacation_country {
   margin-bottom: 100px;
   color: white;
   text-align: center;
+}
+
+.promise_container h3 {
+  color: white;
 }
 
 .main_promise {
@@ -1442,16 +1554,39 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 200vh;
+  height: 180vh;
+}
+
+.left_about,
+.right_about {
+  width: 45%;
+}
+.left_about .about_summary {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+
+.right_about .about_detail {
+  line-height: 2;
+  font-size: 1rem;
+  color: #526381;
+}
+.about h3 {
+  color: #081c3a;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .about_container {
   width: 80%;
-  height: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70vh;
+  height: 50vh;
 }
 
 .review_photos {
@@ -1531,7 +1666,7 @@ header {
 }
 
 .agents {
-  margin-top: 50px;
+  margin-top: 5rem;
   width: 100%;
   height: 60vh;
   display: flex;
@@ -1566,6 +1701,21 @@ header {
   border-color: #ececf5;
   border-width: 2px;
   top: 20px;
+}
+
+.agent_city {
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  color: #526381;
+}
+
+h3.agent_name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #081c3a;
+  margin-bottom: 0;
 }
 
 .about_us {
@@ -1664,18 +1814,19 @@ header {
   border-radius: 20px;
   display: flex;
   justify-content: space-around;
-  padding: 50px;
+  padding: 50px 50px 0px 50px;
 }
 
 .post_left,
 .post_right {
   width: 45%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
   position: relative;
+  overflow: hidden;
+  transition: all 1s;
 }
 
 .main_post_bg {
@@ -1685,6 +1836,7 @@ header {
   background-position: center;
   background-size: cover;
   border-radius: 10px;
+  transition: all 1s;
 }
 
 .post_intro {
@@ -1714,6 +1866,7 @@ header {
   top: -12px;
   left: 15px;
   border-radius: 2px;
+  min-width: min-content;
 }
 
 h2.main_post_title {
@@ -1797,4 +1950,56 @@ p.post_abstract {
   width: 70%;
   border-bottom: 1px solid #e6e6f3;
   transform: translateY(-50%);
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .hr_line {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid lightgrey;
+  border-top: none;
+  position: relative;
+}
+
+footer .footer_container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+footer .footer_left {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  color: #081c3a;
+}
+
+footer .footer_left .destinations_tab {
+  cursor: pointer;
+  padding: 1.2rem;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-wrap: nowrap;
+  min-width: min-content;
+  transition: background-color 0.5s;
+}
+footer .footer_left .destinations_tab:first-of-type {
+  background-color: #f7f8fc;
+}
+
+footer .footer_left .destinations_tab:hover,
+.destinations_tab:focus {
+  background-color: #f7f8fc;
 }
