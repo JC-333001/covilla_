@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVILLA</title>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- swiper -->
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="./swiper/swiper.min.css" />
+    <link rel="stylesheet" href="./swiper/swiper-bundle.min.css" />
+    <script src="./swiper/swiper-bundle.js"></script>
+    <script src="./swiper/swiper-bundle.min.js"></script>
+    <script src="./swiper/swiper-bundle.min.js.map"></script>
+    <!-- local css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header
+      style="
+        background: linear-gradient(
+            rgba(15, 19, 38, 0.55),
+            rgba(15, 19, 38, 0.55)
+          ),
+          url(https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd2961c3e396968aac28_031.jpeg);
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100vh;
+        transition: all 2s;
+        overflow: hidden;
+      "
+    >
+      <nav
+        id="left_nav_bar"
+        style="
+          display: block;
+          background-color: white;
+          width: 450px;
+          height: 100vh;
+          position: fixed;
+          left: -450px;
+          transition: 1s ease-in-out;
+          /* z-index: 1; */
+        "
+      >
+        <!-- <div id="cross_but"><i class="fa-solid fa-xmark"></i></div> -->
+        <div id="left_nav_main">
+          <h2 id="nav_heading">Explore vacations</h2>
+          <div class="vacation_container">
+            <div class="sub_container">
+              <h3 class="nav_sub">CHOOSE A CONTINENT</h3>
+              <div class="hr_line"></div>
+            </div>
+            <ul class="locationss">
+              <li class="location">
+                <span class="location_name">Africa</span>
+                <span class="num_of_vac">6 VACATIONS</span>
+              </li>
+              <li class="location">
+                <span class="location_name">Asia</span>
+                <span class="num_of_vac">6 VACATIONS</span>
+              </li>
+              <li class="location">
+                <span class="location_name">Europe</span>
+                <span class="num_of_vac">16 VACATIONS</span>
+              </li>
+            </ul>
+            <div class="sub_container">
+              <h3 class="nav_sub">CHOOSE A DESTINATION</h3>
+              <div class="hr_line"></div>
+            </div>
+            <ul class="locationss">
+              <li class="location">
+                <span class="location_name">France</span>
+                <span class="num_of_vac">6 VACATIONS</span>
+              </li>
+              <li class="location">
+                <span class="location_name">Indonesia</span>
+                <span class="num_of_vac">6 VACATIONS</span>
+              </li>
+              <li class="location">
+                <span class="location_name">Greece</span>
+                <span class="num_of_vac">16 VACATIONS</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <nav class="top_nav">
+        <div id="left_nav_wrapper">
+          <div class="left_nav_button">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+        <div class="main_nav">
+          <nav
+            class="top_nav_bg"
+            style="
+              width: 100%;
+              height: 80px;
+              background-color: white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: fixed;
+              top: -80px;
+              transform: translateX(-80px);
+              z-index: 20;
+            "
+          >
+            <div class="nav_mid">
+              <a href="" class="nav_mid_ref">ABOUT</a>
+              <a href="" class="nav_mid_ref">JOURNAL</a>
+              <a href="" class="nav_mid_ref">SUPPORT</a>
+            </div>
+          </nav>
+          <div class="covilla_logo"><span class="thin-span">Co</span>Villa</div>
+          <div class="nav_drop_down">
+            <span class="destinations"
+              ><button class="des_but">DESTINATIONS</button></span
+            >
+            <div id="drop_down_menu">
+              <div class="sub_container">
+                <h3>CHOOSE A LOCATION</h3>
+                <div class="hr_line"></div>
+              </div>
+              <ul id="countries_list">
+                <li class="country">
+                  <div class="country_img">
+                    <h4>France</h4>
+                    <h5>6 VACATIONS</h5>
+                  </div>
+                </li>
+                <li class="country">
+                  <div class="country_img">
+                    <h4>Indonesia</h4>
+                    <h5>6 VACATIONS</h5>
+                  </div>
+                </li>
+                <li class="country">
+                  <div class="country_img">
+                    <h4>Greece</h4>
+                    <h5>6 VACATIONS</h5>
+                  </div>
+                </li>
+                <li class="country">
+                  <div class="country_img">
+                    <h4>Egypt</h4>
+                    <h5>6 VACATIONS</h5>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section id="header_main">
+        <div class="center_container">
+          <div id="header_left">
+            <p>FAMILY TRAVEL AGENCY</p>
+            <h1>Let's plan your next vacation</h1>
+            <div class="contact_box"><a href="">CONTACT US</a></div>
+          </div>
+          <div id="header_right">
+            <div class="video_shadow_1"">
+            <div class="video_container">
+              <video
+                class="video_player"
+                src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              ></video>
+            </div>
+          </div>
+          <div id="video_btn_wrapper">
+            <div id="video_button">
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="header_bot">
+        <div id="popular_location">
+          <p>POPULAR LOCATION</p>
+          <div id="popular_location_options">
+            <div id="arrow_selectors">
+              <div id="right_arrow">
+                <button><i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+              <div id="left_arrow">
+                <button><i class="fa-solid fa-arrow-left"></i></button>
+              </div>
+            </div>
+            <div id="location_name">
+              <div class="slide_container">
+                <h2><a href="" id="city_name">Denpasar, Indonesia</a></h2>
+                <h3>
+                  <a href="">STARTING AT <span id="price">$6700</span></a>
+                </h3>
+              </div>
+            </div>
+            <div id="location_detail">
+              <a href=""><i class="fa-solid fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section class="gallery">
+      <h3 class="sub_title">COVILLA DESTINATIONS</h3>
+      <h2 class="gallery_heading">Across the world</h2>
+      <!-- Swiper -->
+      <div class="gallery_container">
+        <!-- <div class="overlay overlay1"></div>
+        <div class="overlay overlay2"></div> -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div
+                class="vacation_des"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(
+                      rgba(15, 19, 38, 0),
+                      rgba(15, 19, 38, 0.55)
+                    ),
+                    url(https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd3355581e17e093caed_011.jpeg);
+                  background-position: center;
+                  background-size: cover;
+                "
+              >
+                <h3 class="sub_title">6 VACATIONS</h3>
+                <h2 class="card_title">Indonesia</h2>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="vacation_des"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(
+                      rgba(15, 19, 38, 0),
+                      rgba(15, 19, 38, 0.55)
+                    ),
+                    url(https://assets.website-files.com/606764630d23c37bf9d41bb1/607dd011e021d45c28b27a10_021.jpeg);
+                  background-position: center;
+                  background-size: cover;
+                "
+              >
+                <h3 class="sub_title">6 VACATIONS</h3>
+                <h2 class="card_title">Indonesia</h2>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="vacation_des"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(
+                      rgba(15, 19, 38, 0),
+                      rgba(15, 19, 38, 0.55)
+                    ),
+                    url(https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd2961c3e396968aac28_031.jpeg);
+                  background-position: center;
+                  background-size: cover;
+                "
+              >
+                <h3 class="sub_title">6 VACATIONS</h3>
+                <h2 class="card_title">Indonesia</h2>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="vacation_des"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(
+                      rgba(15, 19, 38, 0),
+                      rgba(15, 19, 38, 0.55)
+                    ),
+                    url(https://assets.website-files.com/606764630d23c37bf9d41bb1/607dcd1ef1d9b0b767714525_001.jpeg);
+                  background-position: center;
+                  background-size: cover;
+                "
+              >
+                <h3 class="sub_title">6 VACATIONS</h3>
+                <h2 class="card_title">Indonesia</h2>
+              </div>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ads">
+      <div class="ads_center_container">
+        <div class="ads_top_container">
+          <div class="ad_left">
+            <h3 class="sub_title">COVILLA BENEFITS</h3>
+            <h2 class="ad_heading">Take your family on the best vacation</h2>
+            <p class="ad_content">
+              Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
+              neque. Sed vitae sollicitudin elit, ac tristique nisi.
+              Pellentesque rutrum egestas massa lacinia volutpat. Integer et
+              facilisis elit, vitae.
+            </p>
+            <div class="ad_btn">CHOOSE A DESTINATION</div>
+          </div>
+          <div class="ad_right">
+            <div class="white_overlay_up"></div>
+            <div class="white_overlay_down"></div>
+          </div>
+        </div>
+        <div class="ads_bot_container">
+          <h3 class="sub_title">WHY WE'RE DIFFERENT</h3>
+          <ul class="features_list">
+            <li class="feature">
+              <div class="feature_detail">
+                <div class="feature_icon">
+                  <img src="/assets/Passport.svg" alt="" />
+                </div>
+                <h2 class="feature_heading">Hands-on planning</h2>
+                <p class="feature_intro">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                  sollicitudin eget velit.
+                </p>
+              </div>
+            </li>
+            <li class="feature">
+              <div class="circle_logo"></div>
+              <div class="feature_detail">
+                <div class="feature_icon">
+                  <img src="/assets/Case.svg" alt="" />
+                </div>
+                <h2 class="feature_heading">Hands-on planning</h2>
+                <p class="feature_intro">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                  sollicitudin eget velit.
+                </p>
+              </div>
+            </li>
+            <li class="feature">
+              <div class="circle_logo"></div>
+              <div class="feature_detail">
+                <div class="feature_icon">
+                  <img src="/assets/Deals.svg" alt="" />
+                </div>
+                <h2 class="feature_heading">Hands-on planning</h2>
+                <p class="feature_intro">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                  sollicitudin eget velit.
+                </p>
+              </div>
+            </li>
+            <li class="feature">
+              <div class="circle_logo"></div>
+              <div class="feature_detail">
+                <div class="feature_icon">
+                  <img src="/assets/Location.svg" alt="" />
+                </div>
+                <h2 class="feature_heading">Hands-on planning</h2>
+                <p class="feature_intro">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                  sollicitudin eget velit.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="comments">
+      <div class="comment_container">
+        <div class="comment">
+          <p class="comment_content">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta
+            esse assumenda inventore fugiat doloremque eum adipisci, tenetur
+            dolorum illum ipsum similique odit odio tempora aspernatur quis rem
+            laboriosam dignissimos incidunt!
+          </p>
+          <h2 class="comment_customer">Samantha Vohnhale</h2>
+        </div>
+        <div class="buttons">
+          <div class="left_button">&larr;</div>
+          <div class="right_button">&rarr;</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular_vacations">
+      <div class="vacations_container">
+        <div class="sub_title_container">
+          <h3 class="sub_title">POPULAR COVILLA VACATIONS</h3>
+          <div class="hr_line"></div>
+        </div>
+        <div class="vacation_display">
+          <div class="vacation_display_top">
+            <ul class="vacation_country_list">
+              <li class="vacation_country one">
+                <div class="main_content">
+                  <h4 class="vacation_country_name">EGYPT</h4>
+                </div>
+                <div class="nav_but active">
+                  <div class="nav_but_dot active"></div>
+                </div>
+                <div class="nav_bar"></div>
+              </li>
+              <li class="vacation_country two">
+                <div class="main_content">
+                  <h4 class="vacation_country_name">GREECE</h4>
+                </div>
+                <div class="nav_but">
+                  <div class="nav_but_dot"></div>
+                </div>
+                <div class="nav_bar"></div>
+              </li>
+              <li class="vacation_country three">
+                <div class="main_content">
+                  <h4 class="vacation_country_name">FRANCE</h4>
+                </div>
+                <div class="nav_but">
+                  <div class="nav_but_dot"></div>
+                </div>
+                <div class="nav_bar"></div>
+              </li>
+              <li class="vacation_country four">
+                <div class="main_content">
+                  <h4 class="vacation_country_name">INDONESIA</h4>
+                </div>
+                <div class="nav_but">
+                  <div class="nav_but_dot"></div>
+                </div>
+                <div class="nav_bar"></div>
+              </li>
+            </ul>
+            <div class="blue_bar active1"></div>
+          </div>
+          <div class="vacation_display_bot">
+            <ul class="vacation_list">
+              <li class="vacation_city vacation_city_1">
+                <div class="vacation_photo">
+                  <div class="vacation_background_img one"></div>
+                </div>
+                <h2 class="vacation_city_name">Bahariya Oasis</h2>
+                <p class="vacation_city_intro">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus impedit officiis assumenda dolorem iste sunt, praesent
+                </p>
+                <div class="vacation_city_info">
+                  <div class="vacation_city_price">
+                    <span class="rates_from">RATES FROM</span
+                    ><span class="rate">$6400</span>
+                  </div>
+                </div>
+              </li>
+              <li class="vacation_city vacation_city_2">
+                <div class="vacation_photo">
+                  <div class="vacation_background_img two"></div>
+                </div>
+                <h2 class="vacation_city_name">Bahariya Oasis</h2>
+                <p class="vacation_city_intro">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus impedit officiis assumenda dolorem iste sunt, praesent
+                </p>
+                <div class="vacation_city_info">
+                  <div class="vacation_city_price">
+                    <span class="rates_from">RATES FROM</span
+                    ><span class="rate">$6400</span>
+                  </div>
+                </div>
+              </li>
+              <li class="vacation_city vacation_city_3">
+                <div class="vacation_photo">
+                  <div class="vacation_background_img three"></div>
+                </div>
+                <h2 class="vacation_city_name">Bahariya Oasis</h2>
+                <p class="vacation_city_intro">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus impedit officiis assumenda dolorem iste sunt, praesent
+                </p>
+                <div class="vacation_city_info">
+                  <div class="vacation_city_price">
+                    <span class="rates_from">RATES FROM</span
+                    ><span class="rate">$6400</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise">
+      <div class="promise_container">
+        <div class="main_promise">
+          <h3 class="sub_title">COVILLA PROMISE</h3>
+          <h2 class="covilla_promise">
+            Get unparalleled peace of mind from start to finish of your trip
+          </h2>
+          <div class="buttons">
+            <div class="contact"><span>CONTACT US</span></div>
+            <div class="how_it_works"><span>HOW IT WORKS</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="get_started">
+      <div class="get_started_container">
+        <div class="get_started_left">
+          <div class="left_container">
+            <div class="background_img">
+              <div class="bg_overlay_1"></div>
+              <div class="bg_overlay_2"></div>
+            </div>
+            <h3 class="sub_title">GET STARTED TODAY</h3>
+            <h2 class="heading">Take the stress out of planning vacations</h2>
+            <p class="intro">
+              Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
+              neque. Sed vitae sollicitudin elit, ac tristique nisi.
+            </p>
+            <div class="blue_btn">MEET YOUR TRAVEL AGENTS</div>
+          </div>
+        </div>
+        <div class="get_started_right">
+          <div class="main_get_started">
+            <div class="subtitle_container">
+              <h3 class="sub_title">HOW IT WORKS</h3>
+              <div class="hr_line"></div>
+            </div>
+            <div class="get_started_card">
+              <!-- <div class="scroll_bar_container">
+                <div class="scroll_bar">
+                  <div class="left_circle"></div>
+                  <div class="left_circle"></div>
+                  <div class="left_circle"></div>
+                  <div class="left_circle"></div>
+                  <div class="left_circle"></div>
+                </div>
+              </div> -->
+              <div class="scroll_content">
+                <div class="step">
+                  <!-- <div class="left_dot"></div> -->
+                  <!-- <div class="left_circle1"></div> -->
+                  <div class="right_circle">1</div>
+                  <h2 class="step_sum">First, clone this template.</h2>
+                  <p class="step_detail">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Odio repellendus quam aperiam distinctio nemo cupiditate
+                    eaque omnis veniam ipsa ullam natus quidem commodi dolores,
+                    quod, sapiente a laborum molestias fuga!
+                  </p>
+                </div>
+                <div class="step">
+                  <!-- <div class="left_dot"></div> -->
+                  <div class="right_circle">2</div>
+                  <h2 class="step_sum">First, clone this template.</h2>
+                  <p class="step_detail">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Odio repellendus quam aperiam distinctio nemo cupiditate
+                    eaque omnis veniam ipsa ullam natus quidem commodi dolores,
+                    quod, sapiente a laborum molestias fuga!
+                  </p>
+                </div>
+                <div class="step">
+                  <!-- <div class="left_dot"></div> -->
+                  <div class="right_circle">3</div>
+                  <h2 class="step_sum">First, clone this template.</h2>
+                  <p class="step_detail">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Odio repellendus quam aperiam distinctio nemo cupiditate
+                    eaque omnis veniam ipsa ullam natus quidem commodi dolores,
+                    quod, sapiente a laborum molestias fuga!
+                  </p>
+                </div>
+                <div class="step">
+                  <!-- <div class="left_dot"></div> -->
+                  <div class="right_circle">4</div>
+                  <h2 class="step_sum">First, clone this template.</h2>
+                  <p class="step_detail">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Odio repellendus quam aperiam distinctio nemo cupiditate
+                    eaque omnis veniam ipsa ullam natus quidem commodi dolores,
+                    quod, sapiente a laborum molestias fuga!
+                  </p>
+                </div>
+                <div class="step">
+                  <!-- <div class="left_dot"></div> -->
+                  <div class="right_circle">5</div>
+                  <h2 class="step_sum">First, clone this template.</h2>
+                  <p class="step_detail">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Odio repellendus quam aperiam distinctio nemo cupiditate
+                    eaque omnis veniam ipsa ullam natus quidem commodi dolores,
+                    quod, sapiente a laborum molestias fuga!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about_container">
+        <div class="left_about">
+          <h3 class="about_heading">ABOUT COVILLA</h3>
+          <h2 class="about_summary">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+            sollicitudin eget velit ut sollicitudin. Nunc ullamcorper nibh
+            nulla.
+          </h2>
+        </div>
+        <div class="right_about">
+          <p class="about_detail">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias
+            ea cum voluptatum voluptatem blanditiis rem, impedit id voluptate
+            nulla adipisci cupiditate, dignissimos quas! Deserunt explicabo,
+            quis fugiat iusto id odit! Quod, ullam! <br />
+            Rerum, soluta nesciunt? Velit sed ad quaerat possimus porro,
+            quibusdam odit modi qui, inventore sunt consectetur culpa doloribus
+            nesciunt deleniti facilis a facere aspernatur. Culpa illo
+            exercitationem maxime?
+          </p>
+        </div>
+      </div>
+      <div class="review_container">
+        <div class="review_photos">
+          <div class="photo_container">
+            <div class="photo one">
+              <div class="shade" style="visibility: hidden">
+                <div class="view_icon"><i class="fa-regular fa-eye"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="photo_container">
+            <div class="photo two">
+              <div class="shade" style="visibility: hidden">
+                <div class="view_icon"><i class="fa-regular fa-eye"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="photo_container">
+            <div class="photo three">
+              <div class="shade" style="visibility: hidden">
+                <div class="view_icon"><i class="fa-regular fa-eye"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="photo_container">
+            <div class="photo four">
+              <div class="shade" style="visibility: hidden">
+                <div class="view_icon"><i class="fa-regular fa-eye"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="photo_container">
+            <div class="photo five">
+              <div class="shade" style="visibility: hidden">
+                <div class="view_icon"><i class="fa-regular fa-eye"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="photo_container">
+            <div class="photo six">
+              <div class="shade" style="visibility: hidden">
+                <div class="view_icon"><i class="fa-regular fa-eye"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="agents">
+        <div class="agents_container">
+          <div class="agents_title">
+            <span class="meet_agents">MEET YOUR TRAVEL AGENTS</span>
+            <div class="hr_line"></div>
+            <div class="about_us">ABOUT US</div>
+          </div>
+          <div class="agents_list">
+            <div class="agent_intros">
+              <div class="agent_intro">
+                <div class="agent_photo one">
+                  <div class="photo_container"></div>
+                </div>
+                <h3 class="agent_name">Terry Von</h3>
+                <h4 class="agent_city">New York, New York</h4>
+              </div>
+            </div>
+            <div class="agent_intros">
+              <div class="agent_intro">
+                <div class="agent_photo two">
+                  <div class="photo_container"></div>
+                </div>
+                <h3 class="agent_name">Terry Von</h3>
+                <h4 class="agent_city">New York, New York</h4>
+              </div>
+            </div>
+            <div class="agent_intros">
+              <div class="agent_intro">
+                <div class="agent_photo three">
+                  <div class="photo_container"></div>
+                </div>
+                <h3 class="agent_name">Terry Von</h3>
+                <h4 class="agent_city">New York, New York</h4>
+              </div>
+            </div>
+            <div class="agent_intros">
+              <div class="agent_intro">
+                <div class="agent_photo four">
+                  <div class="photo_container"></div>
+                </div>
+                <h3 class="agent_name">Terry Von</h3>
+                <h4 class="agent_city">New York, New York</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="posts">
+      <div class="post_container">
+        <div class="post_left">
+          <div class="main_post_bg"></div>
+          <div class="post_intro">
+            <div class="date">April 19, 2021</div>
+            <h2 class="main_post_title">
+              What Will Website Be Like <br />In 100 Years?
+            </h2>
+            <p class="post_abstract">
+              Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
+              neque. Sed vitae sollicitudin elit, ac tristique.
+            </p>
+            <div class="read_more_btn">READ MORE</div>
+          </div>
+        </div>
+        <div class="post_right">
+          <div class="popular_post">
+            <span class="popular_posts">POPULAR POSTS</span>
+            <div class="hr"></div>
+          </div>
+          <ul class="post_list">
+            <li class="post">
+              <div class="bg_container"><div class="post_bg"></div></div>
+              <div class="post_sum">
+                <div class="date">APRIL 19,2021</div>
+                <h3 class="post_title">
+                  7 of the Best Examples of Beautiful Blog Design
+                </h3>
+              </div>
+            </li>
+            <li class="post">
+              <div class="bg_container"><div class="post_bg"></div></div>
+              <div class="post_sum">
+                <div class="date">APRIL 19,2021</div>
+                <h3 class="post_title">
+                  7 of the Best Examples of Beautiful Blog Design
+                </h3>
+              </div>
+            </li>
+            <li class="post">
+              <div class="bg_container"><div class="post_bg"></div></div>
+              <div class="post_sum">
+                <div class="date">APRIL 19,2021</div>
+                <h3 class="post_title">
+                  7 of the Best Examples of Beautiful Blog Design
+                </h3>
+              </div>
+            </li>
+            <li class="post">
+              <div class="bg_container"><div class="post_bg"></div></div>
+
+              <div class="post_sum">
+                <div class="date">APRIL 19,2021</div>
+                <h3 class="post_title">
+                  7 of the Best Examples of Beautiful Blog Design
+                </h3>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer_left">
+        <div class="destinations_tab">DESTINATIONS</div>
+        <div class="destinations_tab">FRANCE</div>
+        <div class="destinations_tab">INDONESIA</div>
+        <div class="destinations_tab">GREECE</div>
+        <div class="destinations_tab">EGYPT</div>
+      </div>
+    </footer>
+    <!-- Swiper JS -->
+    <script src="./swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
